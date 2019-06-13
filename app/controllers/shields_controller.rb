@@ -1,0 +1,2 @@
+class ShieldsController < ApplicationController
+end
