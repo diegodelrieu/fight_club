@@ -16,7 +16,7 @@ champions_attributes = [
   },
   {
     name:         'Fécatte',
-    description:      'Une magicienne dangeureuse',
+    description:      'Une magicienne dangereuse',
     type: 'Witch',
     hp: 100,
     picture: "/images/champion_2.png"
