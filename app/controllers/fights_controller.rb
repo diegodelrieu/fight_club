@@ -1,13 +1,13 @@
 class FightsController < ApplicationController
   def index
-    @champions = Champion.all
+    @champions = Champion.all.first(2)
     @weapons = Weapon.all
     @shields = Shield.all
     @champion_player = Champion.new
   end
 
   def initialize_fight
-    champion_enemy = Dwarf.new(name: "Champion enemi")
+    champion_enemy = Dwarf.new(name: "Yeti", picture: '/images/champion_1.png')
     shield_enemy = Shield.find_by(name: 'Bouclier des 1001 Griffes')
     weapon_enemy = Weapon.find_by(name: 'Arc déroutant')
     champion_enemy.shield = shield_enemy
@@ -35,6 +35,7 @@ class FightsController < ApplicationController
 
     fight = Fight.create!(champion_1: champion_player, champion_2: champion_enemy)
 
+    @fight = fight
     @result = fight.result
     @sequence = fight.fight_sequence
     @fights = Fight.last(5)

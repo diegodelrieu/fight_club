@@ -1,9 +1,42 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-      Résumé du combat
+      <p style="font-weight: bolder" class="m-2 p-2">
+        Résumé du combat
+      </p>
+      <div class="card m-2 pt-2" style="width: 40rem;">
+        <ul style="list-style-type: none;">
+          <% @fight.fight_sequence.each do |round| %>
+            <li class="m-1">
+              <% if @fight.fight_sequence.index(round).even? %>
+                <%= Champion.find(@fight.champion_1_id).name + ' inflige ' + round[:damage].to_s + ' à ' + Champion.find(@fight.champion_2_id).name %> 
+              <% else %>
+                <%= Champion.find(@fight.champion_2_id).name + ' inflige ' + round[:damage].to_s + ' à ' + Champion.find(@fight.champion_1_id).name %> 
+              <% end %>
+            </li>
+          <% end %>
+        <ul>
+          <div class="card m-1">
+            <% if @fight.fight_sequence.last[:champion_1_hp] > 0 %>
+              <%= image_tag @fight.champion_1.picture %>
+              <%= @fight.champion_1.name %> l'emporte
+            <% else %>
+              <%= image_tag @fight.champion_2.picture %>
+              <%= @fight.champion_2.name %> l'emporte
+            <% end %>
+          </div>
+      </div>
+        <a href="/fights">
+          <button type="button" class="btn btn-secondary ml-3 mt-2">
+            repartir au combat ⚔️
+          </button>
+        </a>
     </div>
-    <div class="col-4" style="height: 100vh">Historique des combats
+
+    <div class="col-4" style="height: 100vh">
+      <p style="font-weight: bolder" class="m-2 p-2">
+      Historique des combats
+      </p>
       <% @fights.each do |fight| %>
         <div class="d-flex justify-content-center">
           <div class="card m-2" style="width: 18rem;">

@@ -6,7 +6,7 @@ Shield.destroy_all
 puts 'Creating magic...'
 champions_attributes = [
   {
-    name:         'Little Hunter',
+    name:         'Ecaflip',
     description:      "Ce félin a plus d'un tour dans son sac",
     type: 'Dwarf',
     hp: 100,
@@ -18,7 +18,7 @@ champions_attributes = [
     name:         'Fécatte',
     description:      'Une magicienne dangeureuse',
     type: 'Witch',
-    hp: 50,
+    hp: 100,
     picture: "/images/champion_2.png"
 
   }
