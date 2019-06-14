@@ -7,7 +7,7 @@ puts 'Creating magic...'
 champions_attributes = [
   {
     name:         'Little Hunter',
-    description:      'Sneaky & powerful',
+    description:      "Ce félin a plus d'un tour dans son sac",
     type: 'Dwarf',
     hp: 100,
     weapon_id: 1,
@@ -15,8 +15,8 @@ champions_attributes = [
     picture: "/images/champion_1.png"
   },
   {
-    name:         'Great preacher',
-    description:      'All mighty',
+    name:         'Fécatte',
+    description:      'Une magicienne dangeureuse',
     type: 'Witch',
     hp: 50,
     picture: "/images/champion_2.png"
