@@ -8,7 +8,9 @@
           <div class="card-body">
             <div class="card-text">
               <%= image_tag champion.picture %>
-              <%= champion.name %>
+              <p style="font-weight: bolder">
+                <%= champion.name %>
+              </p>
               <div>
                <%= champion.description %>
               </div>
@@ -26,7 +28,9 @@
           <div class="card-body">
             <div class="card-text">
               <%= image_tag weapon.picture %>
-              <%= weapon.name %>
+              <p style="font-weight: bolder">
+                <%= weapon.name %>
+              </p>
               <div>
                <%= weapon.attack_damage %> dégâts
               </div>
@@ -43,7 +47,9 @@
           <div class="card-body">
             <div class="card-text">
               <%= image_tag shield.picture %>
-              <%= shield.name %>
+              <p style="font-weight: bolder">
+                <%= shield.name %>
+              </p>
               <div>
                <%= shield.defense %> défense
               </div>
