@@ -1,6 +1,0 @@
-<%= simple_form_for [@weapon, @shield, @champion, @instance] do |f| %>
-    <%= f.association :champion, as: :radio_buttons %>
-    <%= f.association :weapon %>
-    <%= f.association :shield %>
-    <%= f.submit "create an instance", class: "btn btn-primary" %>
-  <% end %>

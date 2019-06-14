@@ -10,50 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_130754) do
+ActiveRecord::Schema.define(version: 2019_06_13_223504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "champions", force: :cascade do |t|
     t.string "name"
+    t.string "type"
     t.integer "hp"
-    t.integer "attack_damage"
     t.string "description"
-    t.integer "crit_chance"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "instances", force: :cascade do |t|
-    t.bigint "champion_id"
     t.bigint "weapon_id"
     t.bigint "shield_id"
+    t.index ["shield_id"], name: "index_champions_on_shield_id"
+    t.index ["weapon_id"], name: "index_champions_on_weapon_id"
+  end
+
+  create_table "fights", force: :cascade do |t|
+    t.string "fight_sequence"
+    t.bigint "champion_1_id"
+    t.bigint "champion_2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["champion_id"], name: "index_instances_on_champion_id"
-    t.index ["shield_id"], name: "index_instances_on_shield_id"
-    t.index ["weapon_id"], name: "index_instances_on_weapon_id"
+    t.index ["champion_1_id"], name: "index_fights_on_champion_1_id"
+    t.index ["champion_2_id"], name: "index_fights_on_champion_2_id"
   end
 
   create_table "shields", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "hp"
+    t.integer "defense"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "weapons", force: :cascade do |t|
-    t.integer "attack_damage"
-    t.integer "crit_chance"
     t.string "name"
+    t.integer "attack_damage"
     t.string "description"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "instances", "champions"
-  add_foreign_key "instances", "shields"
-  add_foreign_key "instances", "weapons"
+  add_foreign_key "champions", "shields"
+  add_foreign_key "champions", "weapons"
 end

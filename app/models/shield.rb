@@ -1,3 +1,3 @@
 class Shield < ApplicationRecord
-    has_many :instances
+    has_many :champions
 end

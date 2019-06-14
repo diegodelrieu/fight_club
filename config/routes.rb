@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :champions, only: [:new, :create, :index]
-  resources :weapons, only: [:new, :create, :index]
-  resources :instances, only: [:new, :create, :index]
+  get '/fights', to: 'fights#index', as: 'index'
+  get '/fights/initialize_fight', to: 'fights#initialize_fight', as: 'initialize_fight'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

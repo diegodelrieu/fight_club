@@ -1,0 +1,72 @@
+
+<h1 class="text-center m-3">Bienvenue dans l'arène</h1>
+
+<ul>
+  <% @champions.each do |champion| %>
+    <% unless champion.name.nil? %>
+      <div class="d-flex justify-content-center">
+        <div class="card m-2" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-text">
+              <%= image_tag champion.picture %>
+              <%= champion.name %>
+              <div>
+               <%= champion.description %>
+              </div
+            </p>
+         </div>
+       </div>
+    <% end %>
+  <% end %>
+</ul>
+
+<ul>
+  <% @weapons.each do |weapon| %>
+      <div class="d-flex justify-content-center">
+        <div class="card m-2" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-text">
+              <%= image_tag weapon.picture %>
+              <%= weapon.name %>
+              <div>
+               <%= weapon.attack_damage %>
+              </div
+            </p>
+         </div>
+       </div>
+  <% end %>
+</ul>
+
+<ul>
+  <% @shields.each do |shield| %>
+      <div class="d-flex justify-content-center">
+        <div class="card m-2" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-text">
+              <%= shield.name %>
+              <div>
+               <%= shield.defense %>
+              </div
+            </p>
+         </div>
+       </div>
+  <% end %>
+</ul>
+
+
+<div class="card m-2 justify-content-center" style="width: 18rem;">
+  <%= form_for @champion_player, url: {action: "initialize_fight"}, method: "get" do |f| %>
+    <div class="select m-2">
+      <%= collection_select(:champion, :id, Champion.all, :id, :name) %>
+    </div>
+    <div class="select m-2">
+      <%= collection_select(:champion, :weapon_name, Weapon.all, :id, :name) %>
+    </div>
+    <div class="select m-2">
+      <%= collection_select(:champion, :shield_name, Shield.all, :id, :name) %>
+    </div>
+    <div class="m-2"> 
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

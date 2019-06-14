@@ -1,0 +1,16 @@
+<%= @result.name unless @result.nil? %>
+<ul>
+<% @sequence.each do |round| %>
+    <li>
+        <%= round[:champion_1_hp] %>
+    </li>
+<% end %>
+</ul>
+<br>
+<ul>
+<% @sequence.each do |round| %>
+    <li>
+        <%= round[:champion_2_hp] %>
+    </li>
+<% end %>
+</ul>
