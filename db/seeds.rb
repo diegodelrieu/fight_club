@@ -55,7 +55,7 @@ shields_attributes = [
   },
   {
     name: "Bouclier des 1001 Griffes",
-    defense: 999,
+    defense: 20,
     picture: "/images/shield_2.png"
   },
 ]

@@ -18,8 +18,8 @@ class Champion < ApplicationRecord
     end
 
     def hit(points)
-        if (rand() * 100) + weapon.attack_damage > shield.defense
-            self.hp -= points 
+        if (rand() * 100) > shield.defense
+            self.hp -= points
             self.hp = [0, self.hp].max
         end
     end
