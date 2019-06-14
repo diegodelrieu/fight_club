@@ -7,7 +7,7 @@ class FightsController < ApplicationController
   end
 
   def initialize_fight
-    champion_enemy = Dwarf.new(name: "Yeti", picture: '/images/champion_1.png')
+    champion_enemy = Dwarf.new(name: "Yeti", picture: '/images/yeti.png')
     shield_enemy = Shield.find_by(name: 'Bouclier des 1001 Griffes')
     weapon_enemy = Weapon.find_by(name: 'Arc déroutant')
     champion_enemy.shield = shield_enemy
@@ -21,13 +21,16 @@ class FightsController < ApplicationController
 
     if champion_type == 'Dwarf'
       champion_player = Dwarf.new
+      picture_player = '/images/champion_1.png' 
     else
       champion_player = Witch.new
+      picture_player = '/images/champion_2.png' 
     end
 
     shield_player = Shield.find_by(id: shield_id)
     weapon_player = Weapon.find_by(id: weapon_id)
     name_player = Champion.find_by(id: champion_id).name
+    champion_player.picture = picture_player
     champion_player.shield = shield_player
     champion_player.weapon = weapon_player
     champion_player.name = name_player
