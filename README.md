@@ -1,10 +1,10 @@
-# Readme Boilerplate ![language](https://img.shields.io/badge/language-javascript-blue.svg)
+# Readme ![language](https://img.shields.io/badge/language-javascript-blue.svg)
 
 > Readme boilerplate and generator
 
-A `simple` :zap: fight game!
+A `simple` :zap: dofus-inspired fight game!
 
-![alt text](https://raw.githubusercontent.com/mcdieg/fight_club/master/public/images/screenshot_1.png)
+![screencast](http://g.recordit.co/78kFuVbtZh.gif)
 
 
 ## :books: Table of Contents
@@ -86,7 +86,3 @@ To start a local server
 That's it.
 
 
-
-## :scroll: License
-
-[GNU GPLv3](LICENSE) © [Leonard Henriquez](https://github.com/leonard-henriquez/)
