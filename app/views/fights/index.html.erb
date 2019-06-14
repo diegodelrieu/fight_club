@@ -1,6 +1,20 @@
 <h1 class="text-center m-3">Bienvenue dans l'arène</h1>
 
 <ul>
+  <div class="d-flex justify-content-center">
+    <div class="card m-2 bg-danger" style="width: 18rem;">
+      <div class="card-body">
+        <div class="card-text">
+          <%= image_tag "/images/yeti.png" %>
+          <p class="text-center mt-5" style="font-weight: bolder; color: white">
+            Yeti (le méchant!)
+          </p>
+          <div class="text-center" style="color: white">
+            Attention aux baffes
+          </div>
+        </div>
+      </div>
+    </div>
   <% @champions.each do |champion| %>
     <% unless champion.name.nil? %>
       <div class="d-flex justify-content-center">
