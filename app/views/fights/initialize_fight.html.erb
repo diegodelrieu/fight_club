@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      Résumé du combat
+    </div>
+    <div class="col-4" style="height: 100vh">Historique des combats
+      <% @fights.each do |fight| %>
+        <div class="d-flex justify-content-center">
+          <div class="card m-2" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-text">
+                <% if fight.fight_sequence.last[:champion_1_hp] > 0 %>
+                <%= fight.champion_1.name %> l'emporte
+                <% else %>
+                <%= fight.champion_2.name %> l'emporte
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
