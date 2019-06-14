@@ -60,19 +60,22 @@
 </ul>
 
 
-<div class="card m-2 justify-content-center" style="width: 18rem;">
+<div class="card m-2 justify-content-center mx-auto p-2 bg-success" style="width: 28rem;">
+  <p style="font-weight: bolder" class="text-center">
+    Créer un personnage
+  </p>
   <%= form_for @champion_player, url: {action: "initialize_fight"}, method: "get" do |f| %>
-    <div class="select m-2">
+    <div class="select m-2 p-1">
       <%= collection_select(:champion, :id, Champion.all, :id, :name) %>
     </div>
-    <div class="select m-2">
+    <div class="select m-2 p-1">
       <%= collection_select(:champion, :weapon_name, Weapon.all, :id, :name) %>
     </div>
-    <div class="select m-2">
+    <div class="select m-2 p-1">
       <%= collection_select(:champion, :shield_name, Shield.all, :id, :name) %>
     </div>
-    <div class="m-2"> 
-      <%= f.submit %>
+    <div class="m-2 p-1"> 
+      <%= f.button "Passer au combat", type: 'submit' %>
     </div>
   <% end %>
 </div>
