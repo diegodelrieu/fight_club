@@ -16,16 +16,18 @@
             </li>
           <% end %>
         <ul>
-          <div class="card m-1">
-            <% if @fight.fight_sequence.last[:champion_1_hp] > 0 %>
-              <%= image_tag @fight.champion_1.picture %>
-              <%= @fight.champion_1.name %> l'emporte
-            <% else %>
-              <%= image_tag @fight.champion_2.picture %>
-              <%= @fight.champion_2.name %> l'emporte
-            <% end %>
-          </div>
       </div>
+        <div class="card m-2 bg-success" style="width: 17rem;">
+          <% if @fight.fight_sequence.last[:champion_1_hp] > 0 %>
+            <div>
+              <%= image_tag @fight.champion_1.picture %>
+            </div>
+          <% else %>
+            <div>
+              <%= image_tag @fight.champion_2.picture %>
+            </div>
+          <% end %>
+        </div>
         <a href="/fights">
           <button type="button" class="btn btn-secondary ml-3 mt-2">
             repartir au combat ⚔️
