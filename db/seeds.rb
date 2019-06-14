@@ -19,7 +19,7 @@ champions_attributes = [
     description:      'All mighty',
     type: 'Witch',
     hp: 50,
-    picture: "/images/champion_1.png"
+    picture: "/images/champion_2.png"
 
   }
 ]
@@ -44,9 +44,9 @@ weapons_attributes = [
 
 shields_attributes = [
   {
-    name: "Bouclier en Mousse",
-    defense: 5,
-    picture: "/images/shield_1.png"
+    name: "Bouclier Américain",
+    defense: 10,
+    picture: "/images/shield_3.png"
   },
   {
     name: "Bouclier en Mousse",
