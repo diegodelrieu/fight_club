@@ -6,13 +6,13 @@
       <div class="d-flex justify-content-center">
         <div class="card m-2" style="width: 18rem;">
           <div class="card-body">
-            <p class="card-text">
+            <div class="card-text">
               <%= image_tag champion.picture %>
               <%= champion.name %>
               <div>
                <%= champion.description %>
               </div>
-            </p>
+            </div>
          </div>
        </div>
     <% end %>
@@ -24,13 +24,13 @@
       <div class="d-flex justify-content-center">
         <div class="card m-2" style="width: 18rem;">
           <div class="card-body">
-            <p class="card-text">
+            <div class="card-text">
               <%= image_tag weapon.picture %>
               <%= weapon.name %>
               <div>
-               <%= weapon.attack_damage %>
+               <%= weapon.attack_damage %> dégâts
               </div>
-            </p>
+            </div>
          </div>
        </div>
   <% end %>
@@ -41,13 +41,13 @@
       <div class="d-flex justify-content-center">
         <div class="card m-2" style="width: 18rem;">
           <div class="card-body">
-            <p class="card-text">
+            <div class="card-text">
               <%= image_tag shield.picture %>
               <%= shield.name %>
               <div>
-               <%= shield.defense %>
+               <%= shield.defense %> défense
               </div>
-            </p>
+            </div>
          </div>
        </div>
   <% end %>
